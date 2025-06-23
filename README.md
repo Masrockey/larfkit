@@ -1,61 +1,128 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# AppKit
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Laravel dan FilamentPHP v3 kit yang siap digunakan untuk mengelola data dan konten.
 
-## About Laravel
+## Fitur Utama
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Admin Panel Modern** - Interface admin yang responsif dan user-friendly menggunakan FilamentPHP v3
+- **Autentikasi Aman** - Sistem login dengan username/email dan password
+- **Dashboard Interaktif** - Dashboard dengan widget dan notifikasi real-time
+- **Manajemen User** - Sistem pengelolaan pengguna dengan role dan permission
+- **Responsive Design** - Tampilan yang optimal di semua perangkat
+- **Dark Mode Support** - Dukungan tema gelap dan terang
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Teknologi yang Digunakan
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Laravel 11** - Framework PHP modern dan powerful
+- **FilamentPHP v3** - Admin panel builder yang elegan
+- **Livewire** - Framework full-stack untuk Laravel
+- **Alpine.js** - Framework JavaScript yang ringan
+- **Tailwind CSS** - Utility-first CSS framework
+- **MySQL** - Database management system
 
-## Learning Laravel
+## Instalasi
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Persyaratan Sistem
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP >= 8.2
+- Composer
+- Node.js & NPM
+- MySQL/MariaDB
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Langkah Instalasi
 
-## Laravel Sponsors
+1. Clone repository
+```bash
+git clone <repository-url>
+cd appkit
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Install dependencies
+```bash
+composer install
+npm install
+```
 
-### Premium Partners
+3. Setup environment
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+4. Konfigurasi database di file `.env`
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=appkit
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
 
-## Contributing
+5. Jalankan migrasi dan seeder
+```bash
+php artisan migrate --seed
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+6. Build assets
+```bash
+npm run build
+```
 
-## Code of Conduct
+7. Jalankan aplikasi
+```bash
+php artisan serve
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Akses Admin Panel
 
-## Security Vulnerabilities
+Setelah instalasi selesai, Anda dapat mengakses admin panel di:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
+http://localhost:8000/admin
+```
 
-## License
+**Default Login:**
+- Username: `admin`
+- Password: `password`
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## Pengembangan
+
+### Menjalankan Development Server
+
+```bash
+# Terminal 1 - Laravel Server
+php artisan serve
+
+# Terminal 2 - Asset Watcher
+npm run dev
+```
+
+### Struktur Direktori
+
+```
+app/
+├── Filament/
+│   ├── Pages/          # Custom pages
+│   ├── Resources/      # Resource classes
+├── Http/
+├── Models/
+└── Providers/
+    └── Filament/       # Panel providers
+```
+
+## Kontribusi
+
+Kami menyambut kontribusi dari komunitas! Silakan buat pull request atau laporkan issue jika Anda menemukan bug atau memiliki saran perbaikan.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](https://opensource.org/licenses/MIT).
+
+## Support
+
+Jika Anda memiliki pertanyaan atau membutuhkan bantuan, silakan buat issue di repository ini.
+
+---
+
+**AppKit** - Modern Admin Panel Solution
